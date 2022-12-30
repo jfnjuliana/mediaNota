@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <style>
+
+       body{
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+       }
+
+   </style>
+    <title>Document</title>
+</head>
+<body>
+    
+    <label for="aluno">Digite o nome do aluno</label>
+    <input type="text" name="aluno" id="campoAluno">
+    <label for="nota1">Digite a Nota1</label>
+    <input type="number" name="nota1" id="camponota1">
+    <label for="nota2">Digite a Nota2</label>
+    <input type="number" name="nota2" id="camponota2">
+    <label for="nota3">Digite a Nota3</label>
+    <input type="number" name="nota3" id="camponota3">
+    <label for="nota4">Digite a Nota4</label>
+    <input type="number" name="nota4" id="camponota4">
+    <input type="button" value="CALCULAR A MÉDIA" onclick="resultadoAluno()">
+
+    <p id="resposta"></p>
+
+
+
+    <script>
+
+        function resultadoAluno(){
+
+            let nomeAluno = campoAluno.value
+            let nota1Aluno = Number(camponota1.value)
+            let nota2Aluno = Number(camponota2.value)
+            let nota3Aluno = Number(camponota3.value)
+            let nota4Aluno = Number(camponota4.value)
+
+            let media = (nota1Aluno+nota2Aluno+nota3Aluno+nota4Aluno)/4
+
+            media>=6? resposta.textContent = `Parabéns, ${nomeAluno}! sua média ${media}. Você está aprovado!`: resposta.textContent = `${nomeAluno}, sua média é ${media}. Infelizmente você está reprovado!`
+
+        }
+
+
+    </script>
+</body>
+</html>
